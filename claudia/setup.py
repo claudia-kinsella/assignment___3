@@ -17,6 +17,3 @@ setup(name="LED_Assignment3",
           'console_scripts':['solve_led=claudia.Claudia.main:main']
           }
       )
-
-solve_led --input http :// claritytrec.ucd.ie/~ alawlor/comp30670/ -
-input_assign3.txt
