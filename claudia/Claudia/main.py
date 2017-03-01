@@ -24,8 +24,8 @@ def main():
 #     file_str = read_file('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3.txt')
 #     first_line = int(file_str.splitlines()[0])
 #     file_line=read_file("../../data/input_assign3.txt")
-#     file_line = read_file('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3_b_v2.txt')
-    file_line = read_file(sys.argv[2])
+    file_line = read_file('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3_b_v2.txt')
+#     file_line = read_file(sys.argv[2])
    
     lines = file_line.split('\n')
     size = int(lines[0])
@@ -37,6 +37,8 @@ def main():
             line.replace(' ,',',')
         if ', ' in line:
             line.replace(', ',',')
+        if ' ' in line:
+            line.strip()
         if 'turn on' in line or ' turn on' in line:
             a,b,c,d,e = line.split(" ")
             array.turn_on (c,e)
