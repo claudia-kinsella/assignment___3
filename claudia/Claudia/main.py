@@ -48,10 +48,21 @@ def main():
             array.switch (b,d)
         else:
             pass
+        
+    array.counter()
     
 class led_grid():
      
     def __init__(self, S): 
         self.size= S 
         self.grid = [[False]*S for _ in range(S)]
+        
+    def counter(self):  
+        c=0
+        for i in range(self.size):
+            for j in range(self.size):
+                if self.grid[i][j] == True:
+                    c+=1
+        print(c)  
+        return c
           
