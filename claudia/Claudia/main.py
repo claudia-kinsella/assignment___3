@@ -63,11 +63,10 @@ class led_grid():
     def turn_off(self, c,e):
         x1,y1 = c.split(',')
         x2,y2 = e.split(',')
-        x1 = int(x1)
-        x2 = int(x2)
-        y1 = int(y1)
-        y2 = int(y2)
-        x1, y1, x2, y2 = self.input_range(x1), self.input_range(y1), self.input_range(x2), self.input_range(y2)
+        x1 = int(x1), self.input_range(x1)
+        x2 = int(x2), self.input_range(x2)
+        y1 = int(y1), self.input_range(y1)
+        y2 = int(y2), self.input_range(y2)
         for i in range (x1,x2+1):
             for j in range (y1, y2+1):
                 self.grid[i][j] = False
@@ -76,11 +75,10 @@ class led_grid():
     def turn_on(self,c,e):
         x1,y1 = c.split(',')
         x2,y2 = e.split(',')
-        x1 = int(x1)
-        x2 = int(x2)
-        y1 = int(y1)
-        y2 = int(y2)
-        x1, y1, x2, y2 = self.input_range(x1), self.input_range(y1), self.input_range(x2), self.input_range(y2)
+        x1 = int(x1), self.input_range(x1)
+        x2 = int(x2), self.input_range(x2)
+        y1 = int(y1), self.input_range(x1)
+        y2 = int(y2), self.input_range(y2)
         for i in range (x1,x2+1):
             for j in range (y1, y2+1):
                 self.grid[i][j] = True
@@ -88,11 +86,10 @@ class led_grid():
     def switch(self,b,d):
         x1,y1 = b.split(',')
         x2,y2 = d.split(',')
-        x1 = int(x1)
-        x2 = int(x2)
-        y1 = int(y1)
-        y2 = int(y2)
-        x1, y1, x2, y2 = self.input_range(x1), self.input_range(y1), self.input_range(x2), self.input_range(y2)
+        x1 = int(x1), self.input_range(x1)
+        x2 = int(x2), self.input_range(x2)
+        y1 = int(y1), self.input_range(y1)
+        y2 = int(y2), self.input_range(y2)
         for i in range (x1,x2+1):
             for j in range (y1, y2+1):
                 if self.grid[i][j] == True:
@@ -112,6 +109,8 @@ class led_grid():
     def input_range(self, num):
         if num > self.size:
             return self.size-1
+        elif num < 0:
+            return 0
         else:
             return num
           
