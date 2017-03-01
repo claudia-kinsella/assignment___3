@@ -67,6 +67,7 @@ class led_grid():
         x2 = int(x2)
         y1 = int(y1)
         y2 = int(y2)
+        x1, y1, x2, y2 = self.input_range(x1), self.input_range(y1), self.input_range(x2), self.input_range(y2)
         for i in range (x1,x2+1):
             for j in range (y1, y2+1):
                 self.grid[i][j] = False
@@ -79,6 +80,7 @@ class led_grid():
         x2 = int(x2)
         y1 = int(y1)
         y2 = int(y2)
+        x1, y1, x2, y2 = self.input_range(x1), self.input_range(y1), self.input_range(x2), self.input_range(y2)
         for i in range (x1,x2+1):
             for j in range (y1, y2+1):
                 self.grid[i][j] = True
@@ -90,6 +92,7 @@ class led_grid():
         x2 = int(x2)
         y1 = int(y1)
         y2 = int(y2)
+        x1, y1, x2, y2 = self.input_range(x1), self.input_range(y1), self.input_range(x2), self.input_range(y2)
         for i in range (x1,x2+1):
             for j in range (y1, y2+1):
                 if self.grid[i][j] == True:
