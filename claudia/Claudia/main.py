@@ -105,4 +105,10 @@ class led_grid():
                     c+=1
         print(c)  
         return c
+    
+    def input_range(self, num):
+        if num > self.size:
+            return self.size-1
+        else:
+            return num
           
