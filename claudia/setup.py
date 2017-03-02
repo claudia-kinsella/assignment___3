@@ -13,6 +13,6 @@ setup(name="LED_Assignment3",
       licence="GPL3",
       packages=['Claudia'],
       entry_points={
-          'console_scripts':['solve_led=Claudia.main:main']
+          'console_scripts':['solve_led=claudia.Claudia.main:main']
           }
       )
