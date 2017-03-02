@@ -22,11 +22,11 @@ def read_file(filename):
 def main():
 #     file_line = read_file('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3_c.txt')
     file_line = read_file(sys.argv[2])
-   
+    
     lines = file_line.split('\n')
     size = int(lines[0])
     array = led_grid(size)
-    
+     
     for line in lines:
         line = whitespace(line)
         if 'turn on' in line or ' turn on' in line:
@@ -40,7 +40,7 @@ def main():
             array.switch (b,d)
         else:
             pass
-        
+         
     array.counter()
 
 
@@ -116,5 +116,5 @@ def whitespace(wo_space):
     wo_space = wo_space.strip()
     return wo_space
         
-main()                  
-# if __name__ == '__main'
+if __name__ == '__main__':
+    main()                  
