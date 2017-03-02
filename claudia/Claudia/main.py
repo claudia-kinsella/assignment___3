@@ -33,12 +33,6 @@ def main():
     
     for line in lines:
         
-        if ' ,' in line:
-            line.replace(' ,',',')
-        if ', ' in line:
-            line.replace(', ',',')
-        if ' ' in line:
-            line.strip()
         if 'turn on' in line or ' turn on' in line:
             a,b,c,d,e = line.split(" ")
             array.turn_on (c,e)
@@ -118,4 +112,13 @@ class led_grid():
             return 0
         else:
             return num
+        
+    def whitespace(self, ):
+        if ' ,' in line:
+            line.replace(' ,',',')
+        if ', ' in line:
+            line.replace(', ',',')
+        if ' ' in line:
+            line.strip(' ')
+        
           
