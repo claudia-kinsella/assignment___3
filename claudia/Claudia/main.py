@@ -20,19 +20,15 @@ def read_file(filename):
             
         
 def main():
-    """Function to make a matrix"""
-#     file_str = read_file('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3.txt')
-#     first_line = int(file_str.splitlines()[0])
-#     file_line=read_file("../../data/input_assign3.txt")
-    file_line = read_file('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3_b_v2.txt')
-#     file_line = read_file(sys.argv[2])
+#     file_line = read_file('http://claritytrec.ucd.ie/~alawlor/comp30670/input_assign3_c.txt')
+    file_line = read_file(sys.argv[2])
    
     lines = file_line.split('\n')
     size = int(lines[0])
     array = led_grid(size)
     
     for line in lines:
-        
+        line = whitespace(line)
         if 'turn on' in line or ' turn on' in line:
             a,b,c,d,e = line.split(" ")
             array.turn_on (c,e)
@@ -46,7 +42,8 @@ def main():
             pass
         
     array.counter()
-    
+
+
 class led_grid():
      
     def __init__(self, S): 
@@ -61,7 +58,7 @@ class led_grid():
         x2 = int(x2)
         y1 = int(y1)
         y2 = int(y2)
-        x1, x2, y1, y2 = self.input_range(x1), self.input_range(x2), self.input_range(y1), self.input_range(y2)
+        x1,x2,y1,y2 =self.input_range(x1),self.input_range(x2),self.input_range(y1),self.input_range(y2)
         for i in range (x1,x2+1):
             for j in range (y1, y2+1):
                 self.grid[i][j] = False
@@ -74,7 +71,7 @@ class led_grid():
         x2 = int(x2)
         y1 = int(y1)
         y2 = int(y2)
-        x1, x2, y1, y2 = self.input_range(x1), self.input_range(x2), self.input_range(y1), self.input_range(y2)
+        x1,x2,y1,y2 = self.input_range(x1),self.input_range(x2),self.input_range(y1),self.input_range(y2)
 
         for i in range (x1,x2+1):
             for j in range (y1, y2+1):
@@ -87,8 +84,7 @@ class led_grid():
         x2 = int(x2)
         y1 = int(y1)
         y2 = int(y2)
-        x1, x2, y1, y2 = self.input_range(x1), self.input_range(x2), self.input_range(y1), self.input_range(y2)
-
+        x1,x2,y1,y2 = self.input_range(x1),self.input_range(x2),self.input_range(y1),self.input_range(y2)
         for i in range (x1,x2+1):
             for j in range (y1, y2+1):
                 if self.grid[i][j] == True:
@@ -113,12 +109,12 @@ class led_grid():
         else:
             return num
         
-    def whitespace(self, ):
-        if ' ,' in line:
-            line.replace(' ,',',')
-        if ', ' in line:
-            line.replace(', ',',')
-        if ' ' in line:
-            line.strip(' ')
         
-          
+def whitespace(wo_space):
+    wo_space = wo_space.replace(" ,",",")
+    wo_space = wo_space.replace(", ",",")
+    wo_space = wo_space.strip()
+    return wo_space
+        
+main()                  
+# if __name__ == '__main'
