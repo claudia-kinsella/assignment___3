@@ -11,7 +11,7 @@ setup(name="LED_Assignment3",
       author="Claudia Kinsella",
       author_email="claudia.kinsella@ucdconnect.ie",
       licence="GPL3",
-      packages=['Claudia'],
+      packages=['claudia'],
       entry_points={
           'console_scripts':['solve_led=claudia.Claudia.main:main']
           }
